@@ -8,22 +8,30 @@ fun main(){
 }
 
 fun calcularPrecioMetodo1(nombre: String, edad: Int) : String {
-    if (edad < 18) {
-        return "$nombre, debes abonar 5€"
-    } else if( edad < 65) {
-        return "$nombre, debes abonar 10€"
-    } else {
-        return "$nombre, para ti es gratis"
+    when {
+        edad < 18 -> {
+            return "$nombre, debes abonar 5€"
+        }
+        edad < 65 -> {
+            return "$nombre, debes abonar 10€"
+        }
+        else -> {
+            return "$nombre, para ti es gratis"
+        }
     }
 }
 
 
 fun calcularPrecioMetodo2(nombre: String, edad: Int) : String {
-    return if (edad < 18) {
-        "$nombre, debes abonar 5€"
-    } else if( edad < 65) {
-        "$nombre, debes abonar 10€"
-    } else {
-        "$nombre, para ti es gratis"
+    return when {
+        edad < 18 -> {
+            "$nombre, debes abonar 5€"
+        }
+        edad < 65 -> {
+            "$nombre, debes abonar 10€"
+        }
+        else -> {
+            "$nombre, para ti es gratis"
+        }
     }
 }
